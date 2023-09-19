@@ -15,8 +15,10 @@ import {
   WhiteStar,
 } from "../assets/icons/Stars";
 import PurpleLens from "../assets/images/purle-lens.png";
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
+  const navigate = useNavigate();
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const isDesktop = useMediaQuery({ query: "(min-width: 768px)" });
   const onSubmit = (values: IContact) => {
@@ -146,8 +148,11 @@ const Contact = () => {
             <div className="fixed bottom-[133px] left-[34px] w-[12px] h-[14px]">
               <PurpleStar />
             </div>
-            <div className="flex justify-start items-start max-w-[437px] w-full mx-auto mb-[41px]">
-              <div className="h-[23px] w-[23px] rounded-full border-[1px] border-white flex justify-center items-center">
+            <div className="flex justify-start items-start max-w-[437px] w-full mx-auto mb-[41px] relative z-[100]">
+              <div
+                className="h-[23px] w-[23px] rounded-full border-[1px] border-white flex justify-center items-center"
+                onClick={() => navigate(-1)}
+              >
                 <ChevronLeftIcon className="text-white w-[10px] h-[10px]" />
               </div>
             </div>
