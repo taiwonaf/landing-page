@@ -1,12 +1,12 @@
 import { Field, Formik } from "formik";
-import RegisterImg from "../../assets/images/register.png";
-import FormButton from "../button/FormButton";
-import { initialValues, validationSchema } from "../../validators/register";
-import { IRegiser } from "../../types/register.model";
-import RegisterInput from "../input/RegisterInput";
-import FemaleImg from "./FemaleImg";
-import Male from "./Male";
-const RegisterMobile = () => {
+import RegisterImg from "../../../assets/images/register.png";
+import FormButton from "../../button/FormButton";
+import { initialValues, validationSchema } from "../../../validators/register";
+import { IRegiser } from "../../../types/register.model";
+import RegisterInput from "../../input/RegisterInput";
+import FemaleImg from "../FemaleImg";
+import Male from "../Male";
+const DesktopForm = () => {
   const onSubmit = (values: IRegiser) => {
     console.log(values);
   };
@@ -155,4 +155,4 @@ const RegisterMobile = () => {
   );
 };
 
-export default RegisterMobile;
+export default DesktopForm;
