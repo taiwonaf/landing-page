@@ -26,7 +26,7 @@ const MobileMenu: React.FC<MenuProps> = ({ open, setOpen }) => {
     },
     {
       name: "Contact",
-      path: "#contact",
+      path: "/contact",
     },
   ];
 

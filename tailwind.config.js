@@ -21,6 +21,9 @@ export default {
         btnGradient:
           "linear-gradient(270deg, #903AFF 0%, #D434FE 56.42%, #FF26B9 99.99%, #FE34B9 100%)",
       },
+      boxShadow: {
+        register: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+      },
     },
   },
   plugins: [],

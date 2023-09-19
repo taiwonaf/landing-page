@@ -20,7 +20,7 @@ const navItems = [
   },
   {
     name: "Contact",
-    path: "#contact",
+    path: "/contact",
   },
 ];
 

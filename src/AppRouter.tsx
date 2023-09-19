@@ -13,14 +13,14 @@ const AppRouter = () => {
           element: <Home />,
         },
         {
-          path: "contact",
-          element: <Contact />,
-        },
-        {
           path: "register",
           element: <Register />,
         },
       ],
+    },
+    {
+      path: "/contact",
+      element: <Contact />,
     },
   ]);
   return <RouterProvider router={router} />;
