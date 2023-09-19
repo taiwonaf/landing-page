@@ -12,15 +12,15 @@ const AppRouter = () => {
           index: true,
           element: <Home />,
         },
-        {
-          path: "register",
-          element: <Register />,
-        },
       ],
     },
     {
       path: "/contact",
       element: <Contact />,
+    },
+    {
+      path: "register",
+      element: <Register />,
     },
   ]);
   return <RouterProvider router={router} />;
