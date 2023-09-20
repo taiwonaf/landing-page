@@ -6,8 +6,8 @@ const Rules = () => {
       <div className="max-w-[1255px] w-full mx-auto flex flex-col md:flex-row justify-start items-center gap-[10px] md:gap-[100px]">
         <div className="md:order-1 order-2 flex flex-col justify-center md:justify-start md:items-start items-center gap-[9px] md:gap-[16px] w-full md:w-1/2">
           <div className="text-[20px] md:text-[32px] font-[700] text-white font-clashDisplay text-center md:text-left">
-            <h3>Introduction to getlinked</h3>
-            <h3 className="text-tertiary">tech Hackathon 1.0</h3>
+            <h3>Rules and</h3>
+            <h3 className="text-tertiary">Guidelines</h3>
           </div>
           <p className="text-[13px] md:text-[14px] leading-[27.5px] font-monteserat text-white text-center md:text-left">
             Our tech hackathon is a melting pot of visionaries, and its purpose

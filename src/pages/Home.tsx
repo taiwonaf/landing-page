@@ -3,6 +3,7 @@ import Globe from "../assets/images/planet.png";
 import ManWearingGlasses from "../assets/images/man-wearing-smart-glasses-touching-virtual-screen 1.png";
 import BigIdea from "../components/home/bigIdea/BigIdea";
 import Rules from "../components/home/rules/Rules";
+import Criteria from "../components/home/criteria/Criteria";
 
 const Home = () => {
   return (
@@ -34,6 +35,7 @@ const Home = () => {
       </div>
       <BigIdea />
       <Rules />
+      <Criteria />
     </div>
   );
 };
