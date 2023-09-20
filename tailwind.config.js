@@ -16,6 +16,9 @@ export default {
         pink: {
           DEFAULT: "#FF26B9",
         },
+        deepBg: {
+          DEFAULT: "#100B20",
+        },
       },
       background: {
         btnGradient:

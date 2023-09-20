@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Logo = () => {
   return (
     <Link to={"/"}>
-      <div className="text-[15px] md:text-[36px] font-[700] ">
+      <div className="text-[15px] md:text-[36px] font-[700] font-clashDisplay">
         <span className="text-white">get</span>
         <span className="text-tertiary">Linked</span>
       </div>

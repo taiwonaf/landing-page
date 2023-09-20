@@ -32,7 +32,11 @@ const MobileMenu: React.FC<MenuProps> = ({ open, setOpen }) => {
 
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={setOpen}>
+      <Dialog
+        as="div"
+        className="relative z-[100000000000000]"
+        onClose={setOpen}
+      >
         <Transition.Child
           as={Fragment}
           enter="ease-in-out duration-500"
@@ -44,7 +48,7 @@ const MobileMenu: React.FC<MenuProps> = ({ open, setOpen }) => {
         >
           <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
         </Transition.Child>
-        <div className="fixed inset-0 overflow-hidden">
+        <div className="fixed inset-0 overflow-hidden z-[100000000]">
           <div className="absolute inset-0 overflow-hidden w-full right-0">
             <Transition.Child
               as={Fragment}
@@ -55,7 +59,7 @@ const MobileMenu: React.FC<MenuProps> = ({ open, setOpen }) => {
               leaveFrom="translate-y-0"
               leaveTo="translate-y-[-600px]"
             >
-              <Dialog.Panel className=" w-full bg-secondary pb-[140px] pt-[40xp] rounded-b-[8px]">
+              <Dialog.Panel className=" w-full bg-secondary pb-[140px] pt-[40xp] rounded-b-[8px] z-[100000000]">
                 <div className="px-[47px] pt-[40px]">
                   <div className="flex justify-end">
                     <div className="flex justify-end items-center w-full">

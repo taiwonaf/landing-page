@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
   ];
   return (
     <div className="md:pt-[170px] pt-[70px] px-[50px] pb-[80px] md:pb-[160px]">
-      <div className="max-w-[1255px] w-full mx-auto relative flex flex-col gap-[48px] md:block">
+      <div className="max-w-[1255px] w-full mx-auto relative flex flex-col gap-[144px] md:block">
         <div>
           <div className="mb-[30px] md:mb-[70px]">
             <div className="text-[20px] md:text-[32px] font-[700] text-white font-clashDisplay text-center md:text-left mb-[17px]">
@@ -69,13 +69,13 @@ const PrivacyPolicy = () => {
           </div>
         </div>
         <div className="md:absolute md:inset-0 w-full justify-center items-center flex md:justify-end md:items-center">
-          <div className="md:max-w-[600px] max-w-[262px] w-full h-[750px] relative">
+          <div className="md:max-w-[600px] max-w-[262px] w-full h-[350px] md:h-[750px] relative">
             <img
               src={LockImg}
               alt=""
               className="w-full h-full object-contain relative z-[2]"
             />
-            <div className="absolute inset-0 md:max-w-[530px] max-w-[250px] w-full h-[648px] mb-[305px] md:left-[70px]  md:top-[-205px] left-[20px] top-[-70px]">
+            <div className="absolute inset-0 md:max-w-[530px] max-w-[250px] w-full h-[310px] md:h-[648px] mb-[305px] md:left-[70px]  md:top-[-205px] left-[20px] top-[-100px]">
               <img
                 src={GuardImg}
                 alt=""

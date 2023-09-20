@@ -44,35 +44,37 @@ const Nav = () => {
     };
   }, []);
   return (
-    <nav
-      className={`transition-all duration-300 fixed top-0 left-0 right-0 px-[33px] bg-secondary z-[10000] ${
-        !isScrollingFromTop
-          ? "pt-[25px] bg-secondary"
-          : "pt-[25px] md:pt-[63px]"
-      } pb-[25px] border-b-[1px] border-b-white/[18%]`}
-    >
-      <div className="flex justify-between items-center max-w-[1255px] w-full mx-auto gap-[50px]">
-        <Logo />
-        {/* Desktop menu items */}
-        <div className="hidden md:flex justify-between items-center max-w-[716px] w-full gap-[30px]">
-          <ul className="flex justify-between items-center max-w-[423px] w-full gap-[20px]">
-            {navItems.map((item) => (
-              <li key={item.name}>
-                <Link to={item.path} className="text-white text-[16px]">
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <LinkButton text="Register" path="/register" />
+    <>
+      <nav
+        className={`transition-all duration-300 fixed top-0 left-0 right-0 px-[33px] bg-secondary z-[10000] ${
+          !isScrollingFromTop
+            ? "pt-[25px] bg-secondary"
+            : "pt-[25px] md:pt-[63px]"
+        } pb-[25px] border-b-[1px] border-b-white/[18%]`}
+      >
+        <div className="flex justify-between items-center max-w-[1255px] w-full mx-auto gap-[50px]">
+          <Logo />
+          {/* Desktop menu items */}
+          <div className="hidden md:flex justify-between items-center max-w-[716px] w-full gap-[30px]">
+            <ul className="flex justify-between items-center max-w-[423px] w-full gap-[20px]">
+              {navItems.map((item) => (
+                <li key={item.name}>
+                  <Link to={item.path} className="text-white text-[16px]">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <LinkButton text="Register" path="/register" />
+          </div>
+          {/* Mobile menu items */}
+          <div className="md:hidden" onClick={() => setMobileMenu(!mobileMenu)}>
+            <Hamburger />
+          </div>
         </div>
-        {/* Mobile menu items */}
-        <div className="md:hidden" onClick={() => setMobileMenu(!mobileMenu)}>
-          <Hamburger />
-        </div>
-      </div>
+      </nav>
       <MobileMenu open={mobileMenu} setOpen={setMobileMenu} />
-    </nav>
+    </>
   );
 };
 
