@@ -6,6 +6,8 @@ import Rules from "../components/home/rules/Rules";
 import Criteria from "../components/home/criteria/Criteria";
 import FaqSection from "../components/home/faq/FaqSection";
 import Sponsor from "../components/home/sponsor/Sponsor";
+import Reward from "../components/home/reward/Reward";
+import PrivacyPolicy from "../components/home/privacy/PrivacyPolicy";
 
 const Home = () => {
   return (
@@ -39,7 +41,9 @@ const Home = () => {
       <Rules />
       <Criteria />
       <FaqSection />
+      <Reward />
       <Sponsor />
+      <PrivacyPolicy />
     </div>
   );
 };
