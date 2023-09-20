@@ -1,7 +1,6 @@
 import React from "react";
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import LinkButton from "../button/LinkButton";
 import CloseIcon from "../../assets/icons/CloseIcon";
