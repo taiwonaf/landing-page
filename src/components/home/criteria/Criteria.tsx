@@ -1,5 +1,5 @@
-import BigIdeaImg from "../../../assets/images/big-idea.png";
 import LinkButton from "../../button/LinkButton";
+import CriteriaImg from "../../../assets/images/judge.png";
 
 const Criteria = () => {
   const judgingCrtieria = [
@@ -31,11 +31,11 @@ const Criteria = () => {
   ];
   return (
     <div className="border-b-[1px] border-white/[0.12] pt-[62px] pb-[78px] px-[34px]">
-      <div className="max-w-[1255px] w-full mx-auto flex flex-col md:flex-row justify-start items-center gap-[58px] md:gap-[100px]">
+      <div className="max-w-[1255px] w-full mx-auto flex flex-col md:flex-row justify-start items-center md:items-end gap-[58px] md:gap-[100px]">
         <div className="w-full md:w-1/2 flex justify-center md:justify-end items-center">
-          <div className="w-[264px] h-[257px] md:w-[490px] md:h-[477px]">
+          <div className="md:w-[710px] md:h-[587px] md:relative left-[-40px]">
             <img
-              src={BigIdeaImg}
+              src={CriteriaImg}
               alt="Big idea image"
               className="w-full h-full object-contain"
             />

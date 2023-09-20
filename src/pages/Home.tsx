@@ -4,6 +4,8 @@ import ManWearingGlasses from "../assets/images/man-wearing-smart-glasses-touchi
 import BigIdea from "../components/home/bigIdea/BigIdea";
 import Rules from "../components/home/rules/Rules";
 import Criteria from "../components/home/criteria/Criteria";
+import FaqSection from "../components/home/faq/FaqSection";
+import Sponsor from "../components/home/sponsor/Sponsor";
 
 const Home = () => {
   return (
@@ -36,6 +38,8 @@ const Home = () => {
       <BigIdea />
       <Rules />
       <Criteria />
+      <FaqSection />
+      <Sponsor />
     </div>
   );
 };
