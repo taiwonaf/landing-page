@@ -45,7 +45,7 @@ const Nav = () => {
   }, []);
   return (
     <nav
-      className={`transition-all duration-300 fixed top-0 left-0 right-0 px-[33px] ${
+      className={`transition-all duration-300 fixed top-0 left-0 right-0 px-[33px] bg-secondary z-[10000] ${
         !isScrollingFromTop
           ? "pt-[25px] bg-secondary"
           : "pt-[25px] md:pt-[63px]"
