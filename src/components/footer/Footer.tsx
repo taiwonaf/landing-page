@@ -61,8 +61,8 @@ const contactItems = [
 const Footer = () => {
   return (
     <footer className="pb-[40px] px-[40px] pt-[70px] bg-deepBg ">
-      <div className="flex flex-col gap-[30px] mb-[60px]">
-        <div>
+      <div className="flex flex-col gap-[30px] mb-[60px] max-w-[1100px] w-full mx-auto md:flex md:flex-wrap md:flex-row justify-between items-start md:gap-[30px]">
+        <div className="max-w-[412px] w-full">
           <div className="mb-[12px]">
             <span className="font-clashDisplay font-[700] text-[20px] text-white">
               get<span className="text-tertiary">linked</span>
