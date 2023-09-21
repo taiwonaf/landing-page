@@ -3,7 +3,7 @@ import Trophy from "../../../assets/images/trophy.png";
 
 const Reward = () => {
   return (
-    <div className="md:pt-[75px] md:pb-[150px] pt-[60px] pb-[80px] px-[45px] ">
+    <div className="md:pt-[75px] md:pb-[150px] pt-[60px] pb-[80px] px-[45px] bg-deepBg">
       <div className="md:flex justify-end items-start max-w-[1255px] w-full mx-auto mb-[60px] md:mb-[80px]">
         <div className="md:max-w-[540px] w-full flex justify-start">
           <div className="flex justify-center md:items-start items-center flex-col text-white max-w-[280px] w-full md:max-w-[400px] mx-auto">

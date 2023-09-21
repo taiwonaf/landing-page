@@ -60,7 +60,7 @@ const MobileMenu: React.FC<MenuProps> = ({ open, setOpen }) => {
               leaveTo="translate-y-[-600px]"
             >
               <Dialog.Panel className=" w-full bg-secondary pb-[140px] pt-[40xp] rounded-b-[8px] z-[100000000]">
-                <div className="px-[47px] pt-[40px]">
+                <div className="px-[47px] pt-[40px] font-monteserat">
                   <div className="flex justify-end">
                     <div className="flex justify-end items-center w-full">
                       <div

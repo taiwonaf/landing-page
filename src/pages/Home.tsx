@@ -8,6 +8,7 @@ import FaqSection from "../components/home/faq/FaqSection";
 import Sponsor from "../components/home/sponsor/Sponsor";
 import Reward from "../components/home/reward/Reward";
 import PrivacyPolicy from "../components/home/privacy/PrivacyPolicy";
+import Timeline from "../components/home/timeline/Timeline";
 
 const Home = () => {
   return (
@@ -41,6 +42,7 @@ const Home = () => {
       <Rules />
       <Criteria />
       <FaqSection />
+      <Timeline />
       <Reward />
       <Sponsor />
       <PrivacyPolicy />

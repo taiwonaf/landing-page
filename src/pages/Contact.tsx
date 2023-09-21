@@ -4,7 +4,6 @@ import { Field, Formik } from "formik";
 import { IContact } from "../types/contact.model";
 import FormButton from "../components/button/FormButton";
 import SmallText from "../components/contact/SmallText";
-import LayOutWrapper from "../components/layout/LayOutWrapper";
 import { useMediaQuery } from "react-responsive";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 import Social from "../components/contact/Social";
@@ -15,7 +14,34 @@ import {
   WhiteStar,
 } from "../assets/icons/Stars";
 import PurpleLens from "../assets/images/purle-lens.png";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Nav from "../components/nav/Nav";
+import { BsInstagram } from "react-icons/bs";
+import { RiTwitterXFill } from "react-icons/ri";
+import { BiLogoFacebook, BiLogoLinkedin } from "react-icons/bi";
+
+const socialsItems = [
+  {
+    name: "instagram",
+    icon: <BsInstagram className="text-white h-[18px] w-[18px]" />,
+    link: "https://www.instagram.com",
+  },
+  {
+    name: "Twitter",
+    icon: <RiTwitterXFill className="text-white h-[18px] w-[18px]" />,
+    link: "https://www.x.com",
+  },
+  {
+    name: "Facebook",
+    icon: <BiLogoFacebook className="text-white h-[18px] w-[18px]" />,
+    link: "https://www.facebook.com",
+  },
+  {
+    name: "LinkedIn",
+    icon: <BiLogoLinkedin className="text-white h-[18px] w-[18px]" />,
+    link: "https://www.linkedin.com",
+  },
+];
 
 const Contact = () => {
   const navigate = useNavigate();
@@ -27,12 +53,13 @@ const Contact = () => {
   return (
     <>
       {isDesktop && (
-        <LayOutWrapper>
-          <div className="w-full h-screen pt-[145px]">
+        <>
+          <Nav />
+          <div className="w-full h-screen pt-[145px] font-monteserat bg-secondary">
             <div className="max-w-[1255px] w-full h-full mx-auto flex justify-between items-center px-[49px]">
               <div className=" w-full flex justify-between items-start gap-[30px]">
                 <div className="pt-[56px] w-1/3 hidden md:block">
-                  <h3 className="text-[32px] font-[600] text-tertiary mb-[16px]">
+                  <h3 className="text-[32px] font-[600] text-tertiary mb-[16px] font-clashDisplay">
                     Get in touch
                   </h3>
                   <div className="flex flex-col mb-[17px]">
@@ -49,9 +76,25 @@ const Contact = () => {
                     <SmallText text="we are open from Monday-Friday" />
                     <SmallText text="08:00am - 05:00pm" />
                   </div>
-                  <div>
-                    <span className="text-tertiary text-[16px]">Share on</span>
-                    <div></div>
+                  <div className="flex flex-col justify-center items-start">
+                    <span className="text-tertiary text-[16px] mb-[5px]">
+                      Share on
+                    </span>
+                    <div className="flex gap-[14px] justify-center items-center">
+                      {socialsItems.map((social, index) => {
+                        return (
+                          <Link
+                            key={index}
+                            to={social.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-tertiary"
+                          >
+                            {social.icon}
+                          </Link>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
                 <div className="max-w-[617px] shadow-none md:shadow-register md:bg-white/[0.03] bg-transparent  w-full md:w-2/3 rounded-[12px] flex justify-center items-center px-[20px] pt-[75px] pb-[67px]">
@@ -69,7 +112,7 @@ const Contact = () => {
                       touched,
                     }) => (
                       <div className="max-w-[437px] w-full mx-auto">
-                        <div className="mb-[34px] flex flex-col gap-[7px] text-[20px] text-tertiary font-[600]">
+                        <div className="mb-[34px] flex flex-col gap-[7px] text-[20px] text-tertiary font-[600] font-clashDisplay">
                           <h3>Questions or need assistance?</h3>
                           <h3>Let us know about it!</h3>
                         </div>
@@ -118,9 +161,6 @@ const Contact = () => {
                             text="Submit"
                           />
                         </div>
-                        <div>
-                          <Social />
-                        </div>
                       </div>
                     )}
                   </Formik>
@@ -128,10 +168,10 @@ const Contact = () => {
               </div>
             </div>
           </div>
-        </LayOutWrapper>
+        </>
       )}
       {isMobile && (
-        <div className="w-full h-screen bg-secondary relative">
+        <div className="w-full min-h-screen bg-secondary relative font-monteserat">
           <div className="absolute flex justify-start items-center">
             <img src={PurpleLens} alt="" className="bg-mode" />
           </div>
@@ -171,7 +211,7 @@ const Contact = () => {
                   touched,
                 }) => (
                   <div className="max-w-[437px] w-full mx-auto relative">
-                    <div className="mb-[24px] flex flex-col gap-[7px] text-[20px] text-tertiary font-[600]">
+                    <div className="mb-[24px] flex flex-col gap-[7px] text-[20px] text-tertiary font-[600] font-clashDisplay">
                       <h3>
                         Questions or need <br /> assistance?
                       </h3>

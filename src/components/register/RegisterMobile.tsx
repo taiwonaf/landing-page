@@ -11,9 +11,9 @@ const RegisterMobile = () => {
     console.log(values);
   };
   return (
-    <div className="bg-secondary min-h-screen w-full text-white p-[24px]">
+    <div className="bg-secondary min-h-screen w-full text-white p-[24px] font-monteserat">
       <div className="max-w-[300px] w-full mx-auto">
-        <h4 className="mb-[31px] text-[15px] font-[700] text-tertiary">
+        <h4 className="mb-[31px] text-[15px] font-[700] text-tertiary font-clashDisplay">
           Register
         </h4>
         <div className="h-[155px] flex justify-center  overflow-hidden">

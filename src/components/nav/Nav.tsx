@@ -55,7 +55,7 @@ const Nav = () => {
         <div className="flex justify-between items-center max-w-[1255px] w-full mx-auto gap-[50px]">
           <Logo />
           {/* Desktop menu items */}
-          <div className="hidden md:flex justify-between items-center max-w-[716px] w-full gap-[30px]">
+          <div className="hidden md:flex justify-between items-center max-w-[716px] w-full gap-[30px] font-monteserat">
             <ul className="flex justify-between items-center max-w-[423px] w-full gap-[20px]">
               {navItems.map((item) => (
                 <li key={item.name}>

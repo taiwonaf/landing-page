@@ -16,7 +16,7 @@ const DesktopRegister = () => {
       <div className="relative z-[10]">
         <Nav />
       </div>
-      <div className="pt-[145px] h-screen bg-secondary flex justify-center items-center relative">
+      <div className="pt-[145px] h-screen bg-secondary flex justify-center items-center relative font-monteserat">
         <div className="relative w-full h-full flex justify-center items-center max-w-[1255px]">
           <div className="absolute left-[-150px] flex inset-0 justify-start items-center">
             <div className="h-[717px] w-[717px] ">
@@ -43,7 +43,7 @@ const DesktopRegister = () => {
                   touched,
                 }) => (
                   <div className="max-w-[558px] w-full mx-auto relative">
-                    <h4 className="mb-[33px] text-[32px] font-[600] text-tertiary">
+                    <h4 className="mb-[33px] text-[32px] font-[600] text-tertiary font-clashDisplay">
                       Register
                     </h4>
                     <div className="flex justify-start items-end gap-[7px] mb-[7px]">
