@@ -63,12 +63,12 @@ const Footer = () => {
     <footer className="pb-[40px] px-[40px] pt-[70px] bg-deepBg ">
       <div className="flex flex-col gap-[30px] mb-[60px] max-w-[1100px] w-full mx-auto md:flex md:flex-wrap md:flex-row justify-between items-start md:gap-[30px]">
         <div className="max-w-[412px] w-full">
-          <div className="mb-[12px]">
-            <span className="font-clashDisplay font-[700] text-[20px] text-white">
+          <div className="mb-[12px] md:mb-0">
+            <span className="font-clashDisplay font-[700] text-[20px] text-white md:text-[30px] ">
               get<span className="text-tertiary">linked</span>
             </span>
           </div>
-          <p className="text-white text-[12px] font-[500] leading-[21px] mb-[40px] font-monteserat">
+          <p className="text-white text-[12px] font-[500] leading-[21px] mb-[40px] md:mb-[80px] font-monteserat">
             Getlinked Tech Hackathon is a technology innovation program
             established by a group of organizations with the aim of showcasing
             young and talented individuals in the field of technology
