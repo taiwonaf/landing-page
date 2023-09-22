@@ -9,16 +9,22 @@ import Sponsor from "../components/home/sponsor/Sponsor";
 import Reward from "../components/home/reward/Reward";
 import PrivacyPolicy from "../components/home/privacy/PrivacyPolicy";
 import Timeline from "../components/home/timeline/Timeline";
+import HeroStars from "../components/home/hero/HeroStars";
 
 const Home = () => {
   return (
     <div className=" relative overflow-hidden">
-      <div className="border-white/[0.12] border-b-[1px] md:h-screen relative pt-[73.5px] md:pt-[145px] overflow-hidden px-[33px]">
+      <div className="border-white/[0.12] border-b-[1px] md:min-h-screen relative pt-[73.5px] md:pt-[145px] overflow-hidden px-[33px]">
+        <HeroStars />
         <Hero />
         {/* Destkop bg-images  */}
-        <div className="absolute inset-0 md:flex justify-end items-end hidden">
-          <div className="h-[715px] w-[828px] relative">
-            <img src={ManWearingGlasses} alt="" />
+        <div className="absolute inset-0 md:flex justify-end items-end hidden h-full">
+          <div className="h-[715px] w-[828px] relative mt-auto">
+            <img
+              src={ManWearingGlasses}
+              alt=""
+              className="mix-blend-luminosity	 w-full h-full object-contain bg-[lightgray/50] relative right-[-25px]"
+            />
             <div className="absolute w-[667px] h-[641px] left-[66px] bottom-[56px]">
               <img src={Globe} alt="" />
             </div>
@@ -29,7 +35,7 @@ const Home = () => {
           <img
             src={ManWearingGlasses}
             alt=""
-            className="w-full h-full object-cover"
+            className="mix-blend-luminosity	 w-full h-full object-contain"
           />
           <div className="absolute inset-0 top-0">
             <div className="w-full h-full">

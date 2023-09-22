@@ -50,3 +50,10 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.custom-bg {
+  background: url("/purle-lens.png") lightgray -184.527px 3.278px / 146.745% 105.327%
+    no-repeat;
+  background-blend-mode: hard-light;
+  /* You can also add other styling or sizing properties here */
+}

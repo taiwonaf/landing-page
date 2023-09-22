@@ -173,7 +173,11 @@ const Contact = () => {
       {isMobile && (
         <div className="w-full min-h-screen bg-secondary relative font-monteserat">
           <div className="absolute flex justify-start items-center">
-            <img src={PurpleLens} alt="" className="bg-mode" />
+            <img
+              src={PurpleLens}
+              alt=""
+              className="opacity-[60] backdrop-blur-lg"
+            />
           </div>
           <div className="max-w-[1255px] w-full h-full mx-auto flex flex-col justify-start items-start px-[20px] pt-[47px]">
             <div className="fixed top-[67px] left-[183px] w-[11px] h-[13px]">

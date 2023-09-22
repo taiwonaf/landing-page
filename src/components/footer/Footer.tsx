@@ -4,6 +4,7 @@ import { RiTwitterXFill } from "react-icons/ri";
 import { BiLogoFacebook, BiLogoLinkedin } from "react-icons/bi";
 import { PiPhoneCallFill } from "react-icons/pi";
 import { HiLocationMarker } from "react-icons/hi";
+import FooterStars from "./FooterStars";
 
 const socialsItems = [
   {
@@ -60,7 +61,8 @@ const contactItems = [
 
 const Footer = () => {
   return (
-    <footer className="pb-[40px] px-[40px] pt-[70px] bg-deepBg ">
+    <footer className="pb-[40px] px-[40px] pt-[70px] bg-deepBg relative">
+      <FooterStars />
       <div className="flex flex-col gap-[30px] mb-[60px] max-w-[1100px] w-full mx-auto md:flex md:flex-wrap md:flex-row justify-between items-start md:gap-[30px]">
         <div className="max-w-[412px] w-full">
           <div className="mb-[12px] md:mb-0">
