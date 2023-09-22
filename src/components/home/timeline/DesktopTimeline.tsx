@@ -1,4 +1,5 @@
 import DesktopTimeLineItem from "./DesktopTimeLineItem";
+import DesktopTimelineStars from "./DesktopTimelineStars";
 
 const timelineItems = [
   {
@@ -46,15 +47,18 @@ const timelineItems = [
 
 const DesktopTimeline = () => {
   return (
-    <div>
-      <div className="max-w-[1255px] w-full mx-auto">
-        <div className="space-y-[20px]">
-          {timelineItems.map((item, index) => {
-            return <DesktopTimeLineItem {...item} key={index} />;
-          })}
+    <>
+      <DesktopTimelineStars />
+      <div>
+        <div className="max-w-[1255px] w-full mx-auto relative">
+          <div className="space-y-[20px]">
+            {timelineItems.map((item, index) => {
+              return <DesktopTimeLineItem {...item} key={index} />;
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

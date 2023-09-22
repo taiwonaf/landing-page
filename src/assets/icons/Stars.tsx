@@ -1,4 +1,4 @@
-import Pink from "../images/pink-star.png";
+import Pink from "../images/stars/pinkStar.svg";
 import Grey from "../images/stars/greyStar.svg";
 import White from "../images/stars/WhiteStar.svg";
 import Purple from "../images/stars/purpleStar.svg";

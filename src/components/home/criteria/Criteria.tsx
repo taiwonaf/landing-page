@@ -1,5 +1,6 @@
 import LinkButton from "../../button/LinkButton";
 import CriteriaImg from "../../../assets/images/judge.png";
+import CriteriaStars from "./CriteriaStars";
 
 const Criteria = () => {
   const judgingCrtieria = [
@@ -30,7 +31,8 @@ const Criteria = () => {
     },
   ];
   return (
-    <div className="border-b-[1px] border-white/[0.12] pt-[62px] pb-[78px] px-[34px]">
+    <div className="relative border-b-[1px] border-white/[0.12] pt-[62px] pb-[78px] px-[34px]">
+      <CriteriaStars />
       <div className="max-w-[1255px] w-full mx-auto flex flex-col md:flex-row justify-start items-center md:items-end gap-[58px] md:gap-[100px]">
         <div className="w-full md:w-1/2 flex justify-center md:justify-end items-center">
           <div className="md:w-[710px] md:h-[587px] md:relative left-[-40px]">

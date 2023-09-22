@@ -6,7 +6,7 @@ const Timeline = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const isDesktop = useMediaQuery({ query: "(min-width: 768px)" });
   return (
-    <div className="px-[30px] md:pt-[72px] pb-[115px]">
+    <div className="px-[30px] md:pt-[72px] pb-[115px] relative">
       <div className="text-white max-w-[350px] w-full mx-auto mb-[56px] md:mb-[90px]">
         <h2 className="font-clashDisplay text-center text-[20px] md:leading-[28px] md:text-[32px] md:mb-[22px] font-[700] leading-[28px] mb-[5px]">
           Timeline
