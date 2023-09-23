@@ -21,6 +21,7 @@ import { RiTwitterXFill } from "react-icons/ri";
 import { BiLogoFacebook, BiLogoLinkedin } from "react-icons/bi";
 import { useContactMutation } from "../app/services/apiServices";
 import PurpleLens from "../assets/icons/PurpleLens";
+import GoBackIcon from "../assets/icons/GoBackIcon";
 
 const socialsItems = [
   {
@@ -226,10 +227,11 @@ const Contact = () => {
             </div>
             <div className="flex justify-start items-start max-w-[437px] w-full mx-auto mb-[41px] relative z-[100]">
               <div
-                className="h-[23px] w-[23px] rounded-full border-[1px] border-white flex justify-center items-center"
+                className="h-[23px] w-[23px] rounded-fullflex justify-center items-center"
                 onClick={() => navigate(-1)}
               >
-                <ChevronLeftIcon className="text-white w-[10px] h-[10px]" />
+                <GoBackIcon />
+                {/* <ChevronLeftIcon className="text-white w-[10px] h-[10px]" /> */}
               </div>
             </div>
             <div className=" relative z-[20] bg-transparent  w-full rounded-[12px] flex justify-center items-center pb-[36px]">
