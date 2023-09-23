@@ -84,11 +84,9 @@ const Criteria = () => {
               );
             })}
           </div>
-          <Reveal>
-            <div className="flex justify-center  w-full md:justify-start items-start">
-              <LinkButton path="#" text="Read More" />
-            </div>
-          </Reveal>
+          <div className="flex justify-center  w-full md:justify-start items-start">
+            <LinkButton path="#" text="Read More" />
+          </div>
         </div>
       </div>
     </div>
