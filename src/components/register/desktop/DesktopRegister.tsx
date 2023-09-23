@@ -9,8 +9,11 @@ import Male from "../Male";
 import Nav from "../../nav/Nav";
 import { useRegisterMutation } from "../../../app/services/apiServices";
 import { toast } from "react-toastify";
+import RegisterModal from "../../modal/RegisterModal";
+import { useState } from "react";
 
 const DesktopRegister = () => {
+  const [successModal, setSuccessModal] = useState<boolean>(false);
   const [register, { isLoading }] = useRegisterMutation();
   const onSubmit = async (
     values: IRegiser,
@@ -30,6 +33,7 @@ const DesktopRegister = () => {
           progress: undefined,
           theme: "light",
         });
+        setSuccessModal(true);
       }
       console.log(registerResponse);
     } catch (error: any) {
@@ -45,7 +49,6 @@ const DesktopRegister = () => {
       });
       resetForm();
     }
-    console.log(values);
   };
   return (
     <>
@@ -271,6 +274,7 @@ const DesktopRegister = () => {
           </div>
         </div>
       </div>
+      <RegisterModal open={successModal} setOpen={setSuccessModal} />
     </>
   );
 };
