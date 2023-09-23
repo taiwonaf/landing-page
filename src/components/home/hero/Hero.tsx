@@ -1,8 +1,23 @@
+import { useEffect, useState } from "react";
 import LinkButton from "../../button/LinkButton";
 import { Chain, Fire } from "./HeroTextImg";
 import TopText from "./TopText";
 
 const Hero = () => {
+  const [time, setTime] = useState<Date>(new Date());
+
+  useEffect(() => {
+    const intervalID = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+
+    // Cleanup the interval when the component unmounts
+    return () => clearInterval(intervalID);
+  }, []);
+
+  const hours: number = time.getHours();
+  const minutes: number = time.getMinutes();
+  const seconds: number = time.getSeconds();
   return (
     <div className=" max-w-[1440px] mx-auto pt-[32px] relative z-[10]">
       <TopText />
@@ -27,19 +42,19 @@ const Hero = () => {
           </div>
           <div className="text-white text-[64px] flex justify-center md:justify-start gap-[20px] font-unica">
             <span className="flex items-center">
-              00{" "}
+              {String(hours).padStart(2, "0")}
               <span className="text-[14px] font-monteserat relative bottom-[-18px]">
                 H
               </span>
             </span>
             <span className="flex items-center">
-              00{" "}
+              {String(minutes).padStart(2, "0")}
               <span className="text-[14px] font-monteserat relative bottom-[-18px]">
                 M
               </span>
             </span>
             <span className="flex items-center">
-              00{" "}
+              {String(seconds).padStart(2, "0")}
               <span className="text-[14px] font-monteserat relative bottom-[-18px]">
                 S
               </span>
