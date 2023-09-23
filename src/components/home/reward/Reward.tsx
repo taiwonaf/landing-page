@@ -2,6 +2,7 @@ import PurpleLens from "../../../assets/icons/PurpleLens";
 import { GreyStar, PurpleStar, WhiteStar } from "../../../assets/icons/Stars";
 import RewardImg from "../../../assets/images/Rewards.png";
 import Trophy from "../../../assets/images/trophy.png";
+import Reveal from "../../utilis/Reveal";
 
 const Reward = () => {
   return (
@@ -38,16 +39,22 @@ const Reward = () => {
       <div className="md:flex justify-end items-start max-w-[1255px] w-full mx-auto mb-[60px] md:mb-[80px]">
         <div className="md:max-w-[540px] w-full flex justify-start">
           <div className="flex justify-center md:items-start items-center flex-col text-white max-w-[280px] w-full md:max-w-[400px] mx-auto">
-            <h2 className="font-clashDisplay text-center text-[20px] md:leading-[28px] md:text-[32px] md:mb-[22px] font-[700] leading-[28px] mb-[5px]">
-              Prizes and
-            </h2>
-            <h2 className="font-clashDisplay text-center text-[20px] md:leading-[28px] text-tertiary md:text-[32px] md:mb-[22px] font-[700] leading-[28px] mb-[5px]">
-              Rewards
-            </h2>
-            <p className="text-[12px] md:text-left text-center md:text-[14px] md:leading-[28px] leading-[21px] font-monteserat">
-              Getlinked Hackathon 1.0 is honored to have the following major
-              companies as its partners and sponsors
-            </p>
+            <Reveal>
+              <h2 className="font-clashDisplay text-center text-[20px] md:leading-[28px] md:text-[32px] md:mb-[22px] font-[700] leading-[28px] mb-[5px]">
+                Prizes and
+              </h2>
+            </Reveal>
+            <Reveal>
+              <h2 className="font-clashDisplay text-center text-[20px] md:leading-[28px] text-tertiary md:text-[32px] md:mb-[22px] font-[700] leading-[28px] mb-[5px]">
+                Rewards
+              </h2>
+            </Reveal>
+            <Reveal>
+              <p className="text-[12px] md:text-left text-center md:text-[14px] md:leading-[28px] leading-[21px] font-monteserat">
+                Getlinked Hackathon 1.0 is honored to have the following major
+                companies as its partners and sponsors
+              </p>
+            </Reveal>
           </div>
         </div>
       </div>
@@ -70,13 +77,15 @@ const Reward = () => {
           <div className="h-[12px] md:block max-w-[10px] md:max-w-[26px] md:h-[32px] w-full md:bottom-[-50px] md:right-[200px] absolute bottom-[-50px] right-[100px]">
             <GreyStar />
           </div>
-          <div className="max-w-[692px] w-full h-full ">
-            <img
-              src={RewardImg}
-              alt=""
-              className="w-full h-full object-contain"
-            />
-          </div>
+          <Reveal>
+            <div className="max-w-[692px] w-full h-full ">
+              <img
+                src={RewardImg}
+                alt=""
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </Reveal>
         </div>
       </div>
     </div>

@@ -1,3 +1,4 @@
+import Reveal from "../../utilis/Reveal";
 import DesktopTimeLineItem from "./DesktopTimeLineItem";
 import DesktopTimelineStars from "./DesktopTimelineStars";
 
@@ -51,11 +52,13 @@ const DesktopTimeline = () => {
       <DesktopTimelineStars />
       <div>
         <div className="max-w-[1255px] w-full mx-auto relative">
-          <div className="space-y-[20px]">
-            {timelineItems.map((item, index) => {
-              return <DesktopTimeLineItem {...item} key={index} />;
-            })}
-          </div>
+          <Reveal>
+            <div className="space-y-[20px]">
+              {timelineItems.map((item, index) => {
+                return <DesktopTimeLineItem {...item} key={index} />;
+              })}
+            </div>
+          </Reveal>
         </div>
       </div>
     </>

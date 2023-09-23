@@ -8,6 +8,7 @@ import {
   WhiteStar,
 } from "../../../assets/icons/Stars";
 import PurpleLens from "../../../assets/icons/PurpleLens";
+import Reveal from "../../utilis/Reveal";
 
 const FaqSection = () => {
   return (
@@ -28,13 +29,19 @@ const FaqSection = () => {
             <div className="max-w-[18px] h-[22px] md:h-[36px] md:max-w-[30px] w-full absolute top-[0] left-[0px] md:top-[-50px] md:left-[-30px]">
               <PurpleStar />
             </div>
-            <h3>Frequently Asked</h3>
-            <h3 className="text-tertiary">Question</h3>
+            <Reveal>
+              <h3>Frequently Asked</h3>
+            </Reveal>
+            <Reveal>
+              <h3 className="text-tertiary">Question</h3>
+            </Reveal>
           </div>
-          <p className="text-[13px] md:text-[14px] leading-[27.5px] font-monteserat text-white text-center md:text-left mb-[45px] md:mb-[68px]">
-            We got answers to the questions that you might want to ask about
-            getlinked Hackathon 1.0
-          </p>
+          <Reveal>
+            <p className="text-[13px] md:text-[14px] leading-[27.5px] font-monteserat text-white text-center md:text-left mb-[45px] md:mb-[68px]">
+              We got answers to the questions that you might want to ask about
+              getlinked Hackathon 1.0
+            </p>
+          </Reveal>
           <Faq />
         </div>
         <div className="w-full relative inset-0 flex justify-end items-center md:absolute right-0 z-[1]">
@@ -66,7 +73,13 @@ const FaqSection = () => {
             <div className="max-w-[10px] h-[10px] md:h-[25px] md:max-w-[21px] w-full absolute bottom-[50px] right-[60px] ">
               <WhiteStar />
             </div>
-            <img src={FaqImage} alt="" className="w-full h-full object-cover" />
+            <Reveal>
+              <img
+                src={FaqImage}
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            </Reveal>
           </div>
         </div>
       </div>
