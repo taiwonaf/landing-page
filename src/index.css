@@ -20,7 +20,12 @@
 }
 
 .btnGradient:hover {
-  background: none;
+  border: 2px solid;
+  border-image-slice: 4;
+  border-width: 2px;
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+  background: transparent;
+  border-radius: 4px;
 }
 
 /* .btnGradient:hover {

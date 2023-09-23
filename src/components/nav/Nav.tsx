@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import LinkButton from "../button/LinkButton";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import MobileMenu from "./MobileMenu";
 import Hamburger from "../../assets/icons/Hamburger";
 import Logo from "../utilis/Logo";
@@ -8,15 +8,15 @@ import Logo from "../utilis/Logo";
 const navItems = [
   {
     name: "Timeline",
-    path: "#timeline",
+    path: "/timeline",
   },
   {
     name: "Overview",
-    path: "#overview",
+    path: "/overview",
   },
   {
     name: "FAQs",
-    path: "#faqs",
+    path: "/faqs",
   },
   {
     name: "Contact",
@@ -59,9 +59,18 @@ const Nav = () => {
             <ul className="flex justify-between items-center max-w-[423px] w-full gap-[20px]">
               {navItems.map((item) => (
                 <li key={item.name}>
-                  <Link to={item.path} className="text-white text-[16px]">
+                  <NavLink
+                    to={item.path}
+                    className={({ isActive, isPending }) =>
+                      isPending
+                        ? "pending"
+                        : isActive
+                        ? "bg-clip-text text-transparent bg-gradient-to-r from-[#903AFF] to-[#FF26B9] text-[16px]"
+                        : "text-white text-[16px]"
+                    }
+                  >
                     {item.name}
-                  </Link>
+                  </NavLink>
                 </li>
               ))}
             </ul>

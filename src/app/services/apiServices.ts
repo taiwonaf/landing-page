@@ -1,6 +1,7 @@
 // Need to use the React-specific entry point to import createApi
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { IContact, IContactResponse } from "../../types/contact.model";
+import { IRegiser, IRegiserResponse } from "../../types/register.model";
 
 // Define a service using a base URL and expected endpoints
 export const landingApi = createApi({
@@ -16,9 +17,16 @@ export const landingApi = createApi({
         body: data,
       }),
     }),
+    register: builder.mutation<IRegiserResponse, IRegiser>({
+      query: (data) => ({
+        url: "registration",
+        method: "POST",
+        body: data,
+      }),
+    }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useContactMutation } = landingApi;
+export const { useContactMutation, useRegisterMutation } = landingApi;
