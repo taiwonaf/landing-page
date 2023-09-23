@@ -19,6 +19,7 @@ import Nav from "../components/nav/Nav";
 import { BsInstagram } from "react-icons/bs";
 import { RiTwitterXFill } from "react-icons/ri";
 import { BiLogoFacebook, BiLogoLinkedin } from "react-icons/bi";
+import { useContactMutation } from "../app/services/apiServices";
 
 const socialsItems = [
   {
@@ -44,12 +45,20 @@ const socialsItems = [
 ];
 
 const Contact = () => {
+  const [contact, { isLoading }] = useContactMutation();
   const navigate = useNavigate();
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const isDesktop = useMediaQuery({ query: "(min-width: 768px)" });
-  const onSubmit = (values: IContact) => {
-    console.log(values);
+  const onSubmit = async (values: IContact) => {
+    try {
+      const loginResponse = await contact(values).unwrap();
+      console.log(loginResponse);
+    } catch (error) {
+      console.log(error);
+    }
   };
+
+  console.log(isLoading);
   return (
     <>
       {isDesktop && (
@@ -118,24 +127,24 @@ const Contact = () => {
                         </div>
                         <div className="flex flex-col gap-[42px]">
                           <ContactInput
-                            name={"firstName"}
+                            name={"first_name"}
                             placeholder={"First Name"}
                             type={"text"}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            value={values.firstName}
-                            error={errors.firstName}
-                            touched={touched.firstName}
+                            value={values.first_name}
+                            error={errors.first_name}
+                            touched={touched.first_name}
                           />
                           <ContactInput
-                            name={"mail"}
+                            name={"email"}
                             placeholder={"Mail"}
                             type={"email"}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            value={values.mail}
-                            error={errors.mail}
-                            touched={touched.mail}
+                            value={values.email}
+                            error={errors.email}
+                            touched={touched.email}
                           />
                           <div className="mb-[30px] relative">
                             <Field
@@ -228,24 +237,24 @@ const Contact = () => {
                     </div>
                     <div className="flex flex-col gap-[42px]">
                       <ContactInput
-                        name={"firstName"}
+                        name={"first_name"}
                         placeholder={"First Name"}
                         type={"text"}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        value={values.firstName}
-                        error={errors.firstName}
-                        touched={touched.firstName}
+                        value={values.first_name}
+                        error={errors.first_name}
+                        touched={touched.first_name}
                       />
                       <ContactInput
-                        name={"mail"}
+                        name={"email"}
                         placeholder={"Mail"}
                         type={"email"}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        value={values.mail}
-                        error={errors.mail}
-                        touched={touched.mail}
+                        value={values.email}
+                        error={errors.email}
+                        touched={touched.email}
                       />
                       <div className="mb-[30px] relative">
                         <Field

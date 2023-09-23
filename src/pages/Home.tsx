@@ -26,7 +26,11 @@ const Home = () => {
               className="mix-blend-luminosity	 w-full h-full object-contain bg-[lightgray/50] relative right-[-25px]"
             />
             <div className="absolute w-[667px] h-[641px] left-[66px] bottom-[56px]">
-              <img src={Globe} alt="" />
+              <img
+                src={Globe}
+                alt=""
+                className="animate-pulse w-full h-full duration-1000"
+              />
             </div>
           </div>
         </div>
@@ -39,7 +43,11 @@ const Home = () => {
           />
           <div className="absolute inset-0 top-0">
             <div className="w-full h-full">
-              <img src={Globe} alt="" className="w-ful h-full object-contain" />
+              <img
+                src={Globe}
+                alt=""
+                className="w-ful h-full object-contain animate-pulse"
+              />
             </div>
           </div>
         </div>
