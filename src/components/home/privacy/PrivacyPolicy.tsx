@@ -2,6 +2,7 @@ import LockImg from "../../../assets/images/man-lock.png";
 import GuardImg from "../../../assets/images/guard.png";
 import LinkButton from "../../button/LinkButton";
 import CheckMark from "../../../assets/icons/CheckMark";
+import PurpleLens from "../../../assets/icons/PurpleLens";
 
 const PrivacyPolicy = () => {
   const licencesItems = [
@@ -13,7 +14,17 @@ const PrivacyPolicy = () => {
     },
   ];
   return (
-    <div className="md:pt-[170px] pt-[70px] px-[50px] pb-[80px] md:pb-[160px]">
+    <div className="md:pt-[170px] pt-[70px] px-[50px] pb-[80px] md:pb-[160px] relative">
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
+        <div className="md:max-w-[1037px] md:h-[948px] w-full absolute top-[-300px] right-[-400px] ">
+          <PurpleLens />
+        </div>
+      </div>
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="md:max-w-[1037px] md:h-[948px] w-full absolute bottom-[-260px] left-[-220px] ">
+          <PurpleLens />
+        </div>
+      </div>
       <div className="max-w-[1255px] w-full mx-auto relative flex flex-col gap-[144px] md:block">
         <div>
           <div className="mb-[30px] md:mb-[70px]">

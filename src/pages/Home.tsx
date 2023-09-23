@@ -10,11 +10,22 @@ import Reward from "../components/home/reward/Reward";
 import PrivacyPolicy from "../components/home/privacy/PrivacyPolicy";
 import Timeline from "../components/home/timeline/Timeline";
 import HeroStars from "../components/home/hero/HeroStars";
+import PurpleLens from "../assets/icons/PurpleLens";
 
 const Home = () => {
   return (
     <div className=" relative overflow-hidden">
       <div className="border-white/[0.12] border-b-[1px] md:min-h-screen relative pt-[73.5px] md:pt-[145px] overflow-hidden px-[33px]">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="md:max-w-[1086px] md:h-[836px] w-full ">
+            <PurpleLens />
+          </div>
+        </div>
+        <div className="absolute inset-0 overflow-hidden flex justify-end items-end">
+          <div className="md:max-w-[828px] md:h-[715px] w-full md:bottom-[-20px] md:right-[-20px] relative">
+            <PurpleLens />
+          </div>
+        </div>
         <HeroStars />
         <Hero />
         {/* Destkop bg-images  */}

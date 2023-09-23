@@ -1,6 +1,7 @@
 import LinkButton from "../../button/LinkButton";
 import CriteriaImg from "../../../assets/images/judge.png";
 import CriteriaStars from "./CriteriaStars";
+import PurpleLens from "../../../assets/icons/PurpleLens";
 
 const Criteria = () => {
   const judgingCrtieria = [
@@ -32,14 +33,30 @@ const Criteria = () => {
   ];
   return (
     <div className="relative border-b-[1px] border-white/[0.12] pt-[62px] pb-[78px] px-[34px]">
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
+        <div className="md:max-w-[1037px] md:h-[948px] w-full absolute left-[-300px] bottom-[-200px]">
+          <PurpleLens />
+        </div>
+      </div>
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
+        <div className="md:max-w-[1037px] md:h-[948px] w-full absolute right-[-400px] bottom-[-400px]">
+          <PurpleLens />
+        </div>
+      </div>
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
+        <div className="md:max-w-[1037px] md:h-[948px] w-full absolute right-[-600px] top-[-600px]">
+          <PurpleLens />
+        </div>
+      </div>
       <CriteriaStars />
       <div className="max-w-[1255px] w-full mx-auto flex flex-col md:flex-row justify-start items-center md:items-end gap-[58px] md:gap-[100px]">
         <div className="w-full md:w-1/2 flex justify-center md:justify-end items-center">
           <div className="md:w-[710px] md:h-[587px] md:relative left-[-40px]">
+            <div className="hidden md:block h-[134px] w-[134px] rounded-full bg-gradient-to-r from-pink to-primary absolute left-[80px] top-[-10px]"></div>
             <img
               src={CriteriaImg}
               alt="Big idea image"
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain relative z-[10]"
             />
           </div>
         </div>

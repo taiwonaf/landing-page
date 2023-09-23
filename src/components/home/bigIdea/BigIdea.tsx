@@ -1,9 +1,15 @@
+import PurpleLens from "../../../assets/icons/PurpleLens";
 import BigIdeaImg from "../../../assets/images/big-idea.png";
 import BigIdeaStars from "./BigIdeaStars";
 
 const BigIdea = () => {
   return (
     <div className="relative border-b-[1px] border-white/[0.12] pt-[62px] pb-[78px] px-[34px]">
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
+        <div className="md:max-w-[1037px] md:h-[948px] w-full absolute left-[-200px] bottom-[-800px]">
+          <PurpleLens />
+        </div>
+      </div>
       <BigIdeaStars />
       <div className="max-w-[1255px] w-full mx-auto flex flex-col md:flex-row justify-start items-center gap-[58px] md:gap-[100px]">
         <div className="w-full md:w-1/2 flex justify-center md:justify-end items-center">

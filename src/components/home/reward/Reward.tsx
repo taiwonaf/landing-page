@@ -1,3 +1,4 @@
+import PurpleLens from "../../../assets/icons/PurpleLens";
 import { GreyStar, PurpleStar, WhiteStar } from "../../../assets/icons/Stars";
 import RewardImg from "../../../assets/images/Rewards.png";
 import Trophy from "../../../assets/images/trophy.png";
@@ -5,6 +6,21 @@ import Trophy from "../../../assets/images/trophy.png";
 const Reward = () => {
   return (
     <div className="relative md:pt-[75px] md:pb-[150px] pt-[60px] pb-[80px] px-[45px] bg-deepBg">
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
+        <div className="md:max-w-[1037px] md:h-[948px] w-full absolute top-[700px] left-[-400px] ">
+          <PurpleLens />
+        </div>
+      </div>
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
+        <div className="md:max-w-[1037px] md:h-[948px] w-full absolute ">
+          <PurpleLens />
+        </div>
+      </div>
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
+        <div className="md:max-w-[1037px] md:h-[948px] w-full absolute right-[-500px] bottom-[-300px]">
+          <PurpleLens />
+        </div>
+      </div>
       <div className="absolute top-[45px] md:top-[45px] left-0 right-0 flex justify-center items-center">
         <div className="max-w-[880px] w-full mx-[30px] flex justify-start items-center">
           <div className="h-[9px] max-w-[7px] w-full md:max-w-[21px] md:h-[25px]">

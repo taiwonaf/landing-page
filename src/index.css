@@ -62,3 +62,11 @@
   background-blend-mode: hard-light;
   /* You can also add other styling or sizing properties here */
 }
+
+.styled-image {
+  background: lightgray -184.527px 3.278px / 146.745% 105.327% no-repeat;
+  background-blend-mode: hard-light;
+  /* Add any other styles you want for the image */
+  width: 300px; /* Set a width to control the image size */
+  height: 200px; /* Set a height to control the image size */
+}

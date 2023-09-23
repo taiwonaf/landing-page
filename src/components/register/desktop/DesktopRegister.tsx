@@ -11,6 +11,13 @@ import { useRegisterMutation } from "../../../app/services/apiServices";
 import { toast } from "react-toastify";
 import RegisterModal from "../../modal/RegisterModal";
 import { useState } from "react";
+import {
+  GreyStar,
+  PinkStar,
+  PurpleStar,
+  WhiteStar,
+} from "../../../assets/icons/Stars";
+import PurpleLens from "../../../assets/icons/PurpleLens";
 
 const DesktopRegister = () => {
   const [successModal, setSuccessModal] = useState<boolean>(false);
@@ -52,11 +59,30 @@ const DesktopRegister = () => {
   };
   return (
     <>
-      <Nav />
-      <div className="min-h-screen pt-[145px] bg-secondary flex justify-center items-center relative font-monteserat">
+      <Nav transparent={true} />
+      <div className="min-h-screen pt-[145px] bg-secondary flex justify-center items-center relative font-monteserat ">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="max-w-[1037px] h-[950px] w-full absolute bottom-[80px] left-[-250px]">
+            <PurpleLens />
+          </div>
+        </div>
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="max-w-[1037px] h-[950px] w-full absolute top-[268px] right-[-430px]">
+            <PurpleLens />
+          </div>
+        </div>
         <div className="relative w-full h-full flex justify-center items-center max-w-[1255px]">
           <div className="absolute left-[-150px] flex inset-0 justify-start items-center">
             <div className="h-[717px] w-[717px] ">
+              <div className="max-w-[21px] h-[25px] absolute top-[50px] left-[10%]">
+                <PinkStar />
+              </div>
+              <div className="max-w-[23px] h-[28px] absolute bottom-[20px] right-[20px]">
+                <PurpleStar />
+              </div>
+              <div className="max-w-[26px] h-[32px] absolute bottom-[50px] left-[10%]">
+                <GreyStar />
+              </div>
               <img
                 src={RegisterImg}
                 alt=""
@@ -65,7 +91,13 @@ const DesktopRegister = () => {
             </div>
           </div>
           <div className="flex relative justify-end items-center max-w-[1255px] w-full mx-auto">
-            <div className="max-w-[740px] bg-white/[3%] rounded-[12px] w-full py-[65px] backdrop-blur-md">
+            <div className="relative max-w-[740px] bg-white/[3%] rounded-[12px] w-full py-[65px] backdrop-blur-md shadow-register">
+              <div className="max-w-[26px] h-[32px] absolute top-[20px] right-[20%]">
+                <GreyStar />
+              </div>
+              <div className="max-w-[10px] h-[12px] absolute bottom-[-7px] right-[20%]">
+                <WhiteStar />
+              </div>
               <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}

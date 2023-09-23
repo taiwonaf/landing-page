@@ -24,7 +24,11 @@ const navItems = [
   },
 ];
 
-const Nav = () => {
+interface NavProps {
+  transparent?: boolean;
+}
+
+const Nav: React.FC<NavProps> = ({ transparent }) => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [isScrollingFromTop, setIsScrollingFromTop] = useState(true);
 
@@ -43,10 +47,12 @@ const Nav = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const bgColor = transparent ? "bg-transparent" : "bg-secondary ";
   return (
     <>
       <nav
-        className={`transition-all duration-300 fixed top-0 left-0 right-0 px-[33px] bg-secondary z-[10000] ${
+        className={`transition-all duration-300 fixed top-0 left-0 right-0 px-[33px]  z-[10000] ${bgColor} ${
           !isScrollingFromTop
             ? "pt-[25px] bg-secondary"
             : "pt-[25px] md:pt-[63px]"

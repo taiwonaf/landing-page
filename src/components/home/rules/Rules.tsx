@@ -1,9 +1,20 @@
+import PurpleLens from "../../../assets/icons/PurpleLens";
 import RulesImg from "../../../assets/images/rules.png";
 import RulesStars from "./RulesStars";
 
 const Rules = () => {
   return (
     <div className="border-b-[1px] border-white/[0.12] px-[36px] py-[40px] md:py-0 relative">
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
+        <div className="md:max-w-[1037px] md:h-[948px] w-full absolute right-[-600px] bottom-[-300px]">
+          <PurpleLens />
+        </div>
+      </div>
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
+        <div className="md:max-w-[1037px] md:h-[948px] w-full absolute left-[-200px] top-[-200px]">
+          <PurpleLens />
+        </div>
+      </div>
       <RulesStars />
       <div className="max-w-[1255px] w-full mx-auto flex flex-col md:flex-row justify-start items-center gap-[10px] md:gap-[100px]">
         <div className="md:order-1 order-2 flex flex-col justify-center md:justify-start md:items-start items-center gap-[9px] md:gap-[16px] w-full md:w-1/2">

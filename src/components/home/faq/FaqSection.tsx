@@ -7,10 +7,21 @@ import {
   PurpleStar,
   WhiteStar,
 } from "../../../assets/icons/Stars";
+import PurpleLens from "../../../assets/icons/PurpleLens";
 
 const FaqSection = () => {
   return (
-    <div className="border-b-[1px] border-white/[0.12] md:pt-[100px] pt-[60px]">
+    <div className="border-b-[1px] border-white/[0.12] md:pt-[100px] pt-[60px] relative">
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
+        <div className="md:max-w-[1037px] md:h-[948px] w-full absolute right-[-400px] top-[-400px]">
+          <PurpleLens />
+        </div>
+      </div>
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
+        <div className="md:max-w-[1037px] md:h-[948px] w-full absolute left-[-400px] top-[-700px]">
+          <PurpleLens />
+        </div>
+      </div>
       <div className="max-w-[1255px] w-full relative mx-auto flex justify-start items-center md:gap-[86px] gap-[80px] flex-col md:flex-row pb-[50px] md:pb-[63px] md:pt-[100px] pt-[60] px-[50px] ">
         <div className="md:max-w-[430px] w-full relative z-[3]">
           <div className="text-[20px] md:text-[32px] font-[700] text-white font-clashDisplay text-center md:text-left mb-[16px] md:mb-[6px] relative">

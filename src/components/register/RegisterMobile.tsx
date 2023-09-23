@@ -10,6 +10,8 @@ import RegisterModal from "../modal/RegisterModal";
 import { toast } from "react-toastify";
 import { useRegisterMutation } from "../../app/services/apiServices";
 import { useState } from "react";
+import { GreyStar, PinkStar, PurpleStar } from "../../assets/icons/Stars";
+import PurpleLens from "../../assets/images/purle-lens.png";
 
 const RegisterMobile = () => {
   const [successModal, setSuccessModal] = useState<boolean>(false);
@@ -51,8 +53,24 @@ const RegisterMobile = () => {
   return (
     <>
       <RegisterModal open={successModal} setOpen={setSuccessModal} />
-      <div className="bg-secondary min-h-screen w-full text-white p-[24px] font-monteserat">
-        <div className="max-w-[300px] w-full mx-auto">
+      <div className="bg-secondary min-h-screen w-full text-white p-[24px] font-monteserat relative">
+        <div className="absolute overflow-hidden left-0 right-0 top-0 h-[400px] flex justify-start items-start">
+          <img
+            src={PurpleLens}
+            className="hue-rotate-[-35deg] z-[1] relative opacity-40 left-[-80px] object-cover w-full h-full"
+            alt=""
+          />
+        </div>
+        <div className="absolute right-[60px] top-[160px] max-w-[14px] h-[13px]">
+          <PinkStar />
+        </div>
+        <div className="absolute left-[40px] top-[300px] max-w-[14px] h-[18px]">
+          <GreyStar />
+        </div>
+        <div className="absolute right-[50px] bottom-[200px] max-w-[9px] h-[10px]">
+          <PurpleStar />
+        </div>
+        <div className="max-w-[500px] w-full mx-auto">
           <h4 className="mb-[31px] text-[15px] font-[700] text-tertiary font-clashDisplay">
             Register
           </h4>
@@ -72,7 +90,7 @@ const RegisterMobile = () => {
               errors,
               touched,
             }) => (
-              <div className="max-w-[437px] w-full mx-auto relative">
+              <div className="max-w-[500px] w-full mx-auto relative">
                 <div className="flex justify-start items-end gap-[7px] mb-[7px]">
                   <p className="text-[12px] text-white ">
                     Be part of this movement
@@ -131,7 +149,7 @@ const RegisterMobile = () => {
                     touched={touched.project_topic}
                   />
                   <div className="flex justify-between items-center gap-[20px] w-full">
-                    <div className="w-full relative">
+                    <div className="relative w-[65%]">
                       <label
                         htmlFor="Category"
                         className="text-[13px] text-white mb-[5px]"
@@ -164,7 +182,7 @@ const RegisterMobile = () => {
                         </p>
                       )}
                     </div>
-                    <div className="w-full relative">
+                    <div className="w-[35%] relative">
                       <label
                         htmlFor="group_size"
                         className="text-[13px] text-white "

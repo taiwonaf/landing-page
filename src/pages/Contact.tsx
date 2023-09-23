@@ -13,13 +13,14 @@ import {
   PurpleStar,
   WhiteStar,
 } from "../assets/icons/Stars";
-import PurpleLens from "../assets/images/purle-lens.png";
+import PurpleLensImage from "../assets/images/purle-lens.png";
 import { Link, useNavigate } from "react-router-dom";
 import Nav from "../components/nav/Nav";
 import { BsInstagram } from "react-icons/bs";
 import { RiTwitterXFill } from "react-icons/ri";
 import { BiLogoFacebook, BiLogoLinkedin } from "react-icons/bi";
 import { useContactMutation } from "../app/services/apiServices";
+import PurpleLens from "../assets/icons/PurpleLens";
 
 const socialsItems = [
   {
@@ -63,8 +64,27 @@ const Contact = () => {
     <>
       {isDesktop && (
         <>
-          <Nav />
-          <div className="w-full h-screen pt-[145px] font-monteserat bg-secondary">
+          <Nav transparent={true} />
+          <div className="w-full h-screen pt-[145px] font-monteserat bg-secondary relative">
+            <div className="absolute inset-0 overflow-hidden">
+              <div className="max-w-[1037px] h-[950px] w-full absolute bottom-[80px] left-[-250px]">
+                <PurpleLens />
+              </div>
+            </div>
+            <div className="absolute inset-0 overflow-hidden">
+              <div className="max-w-[1037px] h-[950px] w-full absolute top-[268px] right-[-430px]">
+                <PurpleLens />
+              </div>
+            </div>
+            <div className="absolute bottom-[115px] right-[130px] max-w-[26px] h-[32px]">
+              <WhiteStar />
+            </div>
+            <div className="absolute top-[170px] right-[235px] max-w-[30px] h-[36px]">
+              <GreyStar />
+            </div>
+            <div className="absolute top-[200px] left-[205px] max-w-[30px] h-[36px]">
+              <PurpleStar />
+            </div>
             <div className="max-w-[1255px] w-full h-full mx-auto flex justify-between items-center px-[49px]">
               <div className=" w-full flex justify-between items-start gap-[30px]">
                 <div className="pt-[56px] w-1/3 hidden md:block">
@@ -106,7 +126,10 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
-                <div className="max-w-[617px] shadow-none md:shadow-register md:bg-white/[0.03] bg-transparent  w-full md:w-2/3 rounded-[12px] flex justify-center items-center px-[20px] pt-[75px] pb-[67px]">
+                <div className="relative max-w-[617px] shadow-none md:shadow-register md:bg-white/[0.03] bg-transparent  w-full md:w-2/3 rounded-[12px] flex justify-center items-center px-[20px] pt-[75px] pb-[67px]">
+                  <div className="absolute bottom-[150px] left-[-13px] max-w-[26px] h-[32px]">
+                    <PurpleStar />
+                  </div>
                   <Formik
                     initialValues={initialValues}
                     validationSchema={validationSchema}
@@ -181,21 +204,21 @@ const Contact = () => {
       )}
       {isMobile && (
         <div className="w-full min-h-screen bg-secondary relative font-monteserat">
-          <div className="absolute flex justify-start items-center">
+          <div className="absolute overflow-hidden left-0 right-0 top-0 h-[400px] flex justify-start items-start">
             <img
-              src={PurpleLens}
+              src={PurpleLensImage}
+              className="hue-rotate-[-35deg] z-[1] relative opacity-40 left-[-120px] object-cover w-full h-full"
               alt=""
-              className="opacity-[60] backdrop-blur-lg"
             />
           </div>
           <div className="max-w-[1255px] w-full h-full mx-auto flex flex-col justify-start items-start px-[20px] pt-[47px]">
-            <div className="fixed top-[67px] left-[183px] w-[11px] h-[13px]">
+            <div className="fixed top-[67px] left-[183px] w-[11px] h-[13px] z-[10]">
               <PinkStar />
             </div>
-            <div className="fixed top-[138px] right-[57px] w-[20px] h-[16px]">
+            <div className="fixed top-[138px] right-[57px] w-[20px] h-[16px] z-[10]">
               <GreyStar />
             </div>
-            <div className="fixed bottom-[210px] right-[27px] w-[12px] h-[14px]">
+            <div className="fixed bottom-[210px] right-[27px] w-[12px] h-[14px] z-[10]">
               <WhiteStar />
             </div>
             <div className="fixed bottom-[133px] left-[34px] w-[12px] h-[14px]">
@@ -209,7 +232,7 @@ const Contact = () => {
                 <ChevronLeftIcon className="text-white w-[10px] h-[10px]" />
               </div>
             </div>
-            <div className=" bg-transparent  w-full rounded-[12px] flex justify-center items-center pb-[36px]">
+            <div className=" relative z-[20] bg-transparent  w-full rounded-[12px] flex justify-center items-center pb-[36px]">
               <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}

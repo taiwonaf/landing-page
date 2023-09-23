@@ -4,6 +4,7 @@ import WinWise from "../../../assets/images/win wise.png";
 import WhisPersms from "../../../assets/images/wisper logo white.png";
 import Paybox from "../../../assets/images/Paybox.png";
 import Vuzual from "../../../assets/images/Vizual Plus.png";
+import PurpleLens from "../../../assets/icons/PurpleLens";
 
 const VertifcalLine = () => (
   <div className="w-[2px] bg-tertiary h-[30px] md:h-[115px]" />
@@ -14,7 +15,18 @@ const HorizontalLine = () => (
 
 const Sponsor = () => {
   return (
-    <div className="border-b-[1px] border-white/[18%]">
+    <div className="border-b-[1px] border-white/[18%] relative">
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
+        <div className="md:max-w-[1037px] md:h-[948px] w-full absolute bottom-[-350px] right-[-400px] ">
+          <PurpleLens />
+        </div>
+      </div>
+
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
+        <div className="md:max-w-[1037px] md:h-[948px] w-full absolute top-[0] left-[0] ">
+          <PurpleLens />
+        </div>
+      </div>
       <div className="max-w-[1255px] w-full mx-auto px-[30px] pb-[105px] md:pb-[150px] pt-[30px] md:pt-[110px]">
         <div className="max-w-[300px] md:max-w-[450px] w-full mx-auto mb-[40px] md:mb-[65px] text-white">
           <h2 className="font-clashDisplay text-center text-[20px] md:leading-[28px] md:text-[32px] md:mb-[22px] font-[700] leading-[28px] mb-[5px]">
