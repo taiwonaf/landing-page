@@ -5,7 +5,6 @@ import { IContact } from "../types/contact.model";
 import FormButton from "../components/button/FormButton";
 import SmallText from "../components/contact/SmallText";
 import { useMediaQuery } from "react-responsive";
-import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 import Social from "../components/contact/Social";
 import {
   GreyStar,
