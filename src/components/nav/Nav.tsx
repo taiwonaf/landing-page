@@ -24,11 +24,7 @@ const navItems = [
   },
 ];
 
-interface NavProps {
-  transparent?: boolean;
-}
-
-const Nav: React.FC<NavProps> = ({ transparent }) => {
+const Nav = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [isScrollingFromTop, setIsScrollingFromTop] = useState(true);
 
@@ -48,17 +44,16 @@ const Nav: React.FC<NavProps> = ({ transparent }) => {
     };
   }, []);
 
-  const bgColor = transparent ? "bg-transparent" : "bg-secondary ";
   return (
     <>
       <nav
-        className={`transition-all duration-300 fixed top-0 left-0 right-0 px-[33px]  z-[10000] ${bgColor} ${
+        className={`transition-all duration-300 fixed top-0 left-0 right-0 px-[33px]  z-[10000] ${
           !isScrollingFromTop
             ? "pt-[25px] bg-secondary"
-            : "pt-[25px] md:pt-[63px]"
+            : "pt-[25px] md:pt-[63px] bg-transparent"
         } pb-[25px] border-b-[1px] border-b-white/[18%]`}
       >
-        <div className="flex justify-between items-center max-w-[1255px] w-full mx-auto gap-[50px]">
+        <div className="flex justify-between items-center max-w-[1440px] w-full mx-auto gap-[50px]">
           <Logo />
           {/* Desktop menu items */}
           <div className="hidden md:flex justify-between items-center max-w-[716px] w-full gap-[30px] font-monteserat">

@@ -73,9 +73,9 @@ const Criteria = () => {
             </Reveal>
           </div>
           <div className="flex flex-col gap-[20px] md:gap-[28px] ">
-            {judgingCrtieria.map((item) => {
+            {judgingCrtieria.map((item, index) => {
               return (
-                <Reveal>
+                <Reveal key={index}>
                   <p className="text-white text-center md:text-left font-monteserat text-[13px] md:text-[14px] leading-[174%]">
                     <span className="text-pink font-[700]">{item.key}</span>
                     {item.value}

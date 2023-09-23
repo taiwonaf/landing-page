@@ -4,6 +4,7 @@ import LinkButton from "../../button/LinkButton";
 import CheckMark from "../../../assets/icons/CheckMark";
 import PurpleLens from "../../../assets/icons/PurpleLens";
 import Reveal from "../../utilis/Reveal";
+import { GreyStar, PurpleStar, WhiteStar } from "../../../assets/icons/Stars";
 
 const PrivacyPolicy = () => {
   const licencesItems = [
@@ -27,9 +28,21 @@ const PrivacyPolicy = () => {
         </div>
       </div>
       <div className="max-w-[1255px] w-full mx-auto relative flex flex-col gap-[144px] md:block">
-        <div>
-          <div className="mb-[30px] md:mb-[70px]">
-            <div className="text-[20px] md:text-[32px] font-[700] text-white font-clashDisplay text-center md:text-left mb-[17px]">
+        <div className="relative">
+          <div className="w-[10px] h-[13px] absolute top-[10px] right-[20px]">
+            <WhiteStar />
+          </div>
+          <div className="w-[10px] h-[13px] absolute top-[10px] right-[-20px]">
+            <WhiteStar />
+          </div>
+          <div className="mb-[30px] md:mb-[70px] relative">
+            <div className="text-[20px] md:text-[32px] font-[700] text-white font-clashDisplay text-center md:text-left mb-[17px] relative">
+              <div className="w-[10px] h-[13px] absolute top-[10px] right-[20px]">
+                <WhiteStar />
+              </div>
+              <div className="w-[10px] h-[13px] absolute top-[10px] right-[-20px]">
+                <WhiteStar />
+              </div>
               <Reveal>
                 <h3>Privacy Policy and</h3>
               </Reveal>
@@ -50,6 +63,12 @@ const PrivacyPolicy = () => {
             </Reveal>
           </div>
           <div className="max-w-[570px] w-full bg-[#D9D9D908] backdrop-blur-sm relative z-[10] md:py-[60px] pb-[50px] pt-[45px] px-[12px] rounded-[5px] border-[1px] border-tertiary">
+            <div className="w-[10px] h-[13px] absolute top-[10px] right-[20px]">
+              <WhiteStar />
+            </div>
+            <div className="w-[10px] h-[13px] absolute top-[10px] right-[-20px]">
+              <WhiteStar />
+            </div>
             <div className="max-w-[425px] w-full mx-auto">
               <Reveal>
                 <p className="text-white text-center text-[12px] leading-[216%] mb-[21px] md:mb-[24px] md:leading-[30px] md:text-[14px] font-monteserat md:text-left">
@@ -98,6 +117,18 @@ const PrivacyPolicy = () => {
         </div>
         <div className="md:absolute md:inset-0 w-full justify-center items-center flex md:justify-end md:items-center">
           <div className="md:max-w-[600px] max-w-[262px] w-full h-[350px] md:h-[750px] relative">
+            <div className="w-[10px] h-[13px] absolute bottom-[50px] right-[20px]">
+              <PurpleStar />
+            </div>
+            <div className="w-[10px] h-[13px] absolute bottom-[90px] left-[20px]">
+              <WhiteStar />
+            </div>
+            <div className="w-[10px] h-[13px] absolute top-[90px] left-[2o0px]">
+              <WhiteStar />
+            </div>
+            <div className="w-[10px] h-[13px] absolute bottom-[200px] left-[100px]">
+              <GreyStar />
+            </div>
             <Reveal>
               <img
                 src={LockImg}

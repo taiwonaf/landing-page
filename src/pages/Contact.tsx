@@ -1,8 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import ContactInput from "../components/input/ContactInput";
 import { initialValues, validationSchema } from "../validators/contact";
-import { Field, Formik } from "formik";
+import { Field, Formik, FormikHelpers } from "formik";
 import { IContact } from "../types/contact.model";
-import FormButton from "../components/button/FormButton";
 import SmallText from "../components/contact/SmallText";
 import { useMediaQuery } from "react-responsive";
 import Social from "../components/contact/Social";
@@ -21,6 +21,8 @@ import { BiLogoFacebook, BiLogoLinkedin } from "react-icons/bi";
 import { useContactMutation } from "../app/services/apiServices";
 import PurpleLens from "../assets/icons/PurpleLens";
 import GoBackIcon from "../assets/icons/GoBackIcon";
+import Reveal from "../components/utilis/Reveal";
+import { toast } from "react-toastify";
 
 const socialsItems = [
   {
@@ -50,12 +52,37 @@ const Contact = () => {
   const navigate = useNavigate();
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const isDesktop = useMediaQuery({ query: "(min-width: 768px)" });
-  const onSubmit = async (values: IContact) => {
+  const onSubmit = async (
+    values: IContact,
+    { resetForm }: FormikHelpers<IContact>
+  ) => {
     try {
       const loginResponse = await contact(values).unwrap();
-      console.log(loginResponse);
-    } catch (error) {
-      console.log(error);
+      if (loginResponse) {
+        resetForm();
+        toast.success("Registeration successful", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      }
+    } catch (error: any) {
+      toast.error(error.data.message, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      resetForm();
     }
   };
 
@@ -64,7 +91,7 @@ const Contact = () => {
     <>
       {isDesktop && (
         <>
-          <Nav transparent={true} />
+          <Nav />
           <div className="w-full h-screen pt-[145px] font-monteserat bg-secondary relative">
             <div className="absolute inset-0 overflow-hidden">
               <div className="max-w-[1037px] h-[950px] w-full absolute bottom-[80px] left-[-250px]">
@@ -88,22 +115,41 @@ const Contact = () => {
             <div className="max-w-[1255px] w-full h-full mx-auto flex justify-between items-center px-[49px]">
               <div className=" w-full flex justify-between items-start gap-[30px]">
                 <div className="pt-[56px] w-1/3 hidden md:block">
-                  <h3 className="text-[32px] font-[600] text-tertiary mb-[16px] font-clashDisplay">
-                    Get in touch
-                  </h3>
+                  <Reveal>
+                    <h3 className="text-[32px] font-[600] text-tertiary mb-[16px] font-clashDisplay">
+                      Get in touch
+                    </h3>
+                  </Reveal>
                   <div className="flex flex-col mb-[17px]">
-                    <SmallText text="Contact" />
-                    <SmallText text="Information" />
+                    <Reveal>
+                      <SmallText text="Contact" />
+                    </Reveal>
+                    <Reveal>
+                      <SmallText text="Information" />
+                    </Reveal>
                   </div>
                   <div className="flex flex-col mb-[21px]">
-                    <SmallText text="27, Alara street" />
-                    <SmallText text="Yaba 100012" />
-                    <SmallText text="Lagos State" />
+                    <Reveal>
+                      <SmallText text="27, Alara street" />
+                    </Reveal>
+                    <Reveal>
+                      <SmallText text="Yaba 100012" />
+                    </Reveal>
+                    <Reveal>
+                      <SmallText text="Lagos State" />
+                    </Reveal>
                   </div>
-                  <SmallText text="Call Us : 07067981819" />
+                  <Reveal>
+                    <SmallText text="Call Us : 07067981819" />
+                  </Reveal>
+
                   <div className="flex flex-col mt-[22px] mb-[35px]">
-                    <SmallText text="we are open from Monday-Friday" />
-                    <SmallText text="08:00am - 05:00pm" />
+                    <Reveal>
+                      <SmallText text="we are open from Monday-Friday" />
+                    </Reveal>
+                    <Reveal>
+                      <SmallText text="08:00am - 05:00pm" />
+                    </Reveal>
                   </div>
                   <div className="flex flex-col justify-center items-start">
                     <span className="text-tertiary text-[16px] mb-[5px]">
@@ -112,15 +158,17 @@ const Contact = () => {
                     <div className="flex gap-[14px] justify-center items-center">
                       {socialsItems.map((social, index) => {
                         return (
-                          <Link
-                            key={index}
-                            to={social.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-tertiary"
-                          >
-                            {social.icon}
-                          </Link>
+                          <Reveal>
+                            <Link
+                              key={index}
+                              to={social.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-tertiary"
+                            >
+                              {social.icon}
+                            </Link>
+                          </Reveal>
                         );
                       })}
                     </div>
@@ -145,8 +193,12 @@ const Contact = () => {
                     }) => (
                       <div className="max-w-[437px] w-full mx-auto">
                         <div className="mb-[34px] flex flex-col gap-[7px] text-[20px] text-tertiary font-[600] font-clashDisplay">
-                          <h3>Questions or need assistance?</h3>
-                          <h3>Let us know about it!</h3>
+                          <Reveal>
+                            <h3>Questions or need assistance?</h3>
+                          </Reveal>
+                          <Reveal>
+                            <h3>Let us know about it!</h3>
+                          </Reveal>
                         </div>
                         <div className="flex flex-col gap-[42px]">
                           <ContactInput
@@ -188,10 +240,34 @@ const Contact = () => {
                           </div>
                         </div>
                         <div className="flex justify-center items-center">
-                          <FormButton
-                            handleClick={handleSubmit}
-                            text="Submit"
-                          />
+                          <div className="max-w-[175px] w-full">
+                            <button
+                              type="submit"
+                              onClick={() => handleSubmit()}
+                              // disabled={!isValid}
+                              className="w-full rounded-[4px] text-white py-[16px] hover:py-[14px] overflow-hidden flex justify-center items-center btnGradient text-[16px] hover:rounded-[4px]"
+                            >
+                              {isLoading && (
+                                <svg
+                                  aria-hidden="true"
+                                  className="inline w-5 h-5 mr-2 text-white animate-spin dark:text-white fill-tertiary"
+                                  viewBox="0 0 100 101"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                                    fill="currentColor"
+                                  />
+                                  <path
+                                    d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                                    fill="currentFill"
+                                  />
+                                </svg>
+                              )}
+                              Submit
+                            </button>
+                          </div>
                         </div>
                       </div>
                     )}
@@ -299,7 +375,34 @@ const Contact = () => {
                       </div>
                     </div>
                     <div className="flex justify-center items-center mb-[41px]">
-                      <FormButton handleClick={handleSubmit} text="Submit" />
+                      <div className="max-w-[175px] w-full">
+                        <button
+                          type="submit"
+                          onClick={() => handleSubmit()}
+                          // disabled={!isValid}
+                          className="w-full rounded-[4px] text-white py-[16px] hover:py-[14px] overflow-hidden flex justify-center items-center btnGradient text-[16px] hover:rounded-[4px]"
+                        >
+                          {isLoading && (
+                            <svg
+                              aria-hidden="true"
+                              className="inline w-5 h-5 mr-2 text-white animate-spin dark:text-white fill-tertiary"
+                              viewBox="0 0 100 101"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                                fill="currentColor"
+                              />
+                              <path
+                                d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                                fill="currentFill"
+                              />
+                            </svg>
+                          )}
+                          Submit
+                        </button>
+                      </div>
                     </div>
                     <div className="flex justify-center items-center ">
                       <Social />

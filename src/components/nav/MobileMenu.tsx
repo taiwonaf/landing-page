@@ -1,7 +1,7 @@
 import React from "react";
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import LinkButton from "../button/LinkButton";
 import CloseIcon from "../../assets/icons/CloseIcon";
 
@@ -90,7 +90,18 @@ const MobileMenu: React.FC<MenuProps> = ({ open, setOpen }) => {
                       {navItems.map((item, index) => {
                         return (
                           <li key={index}>
-                            <Link to={item.path}>{item.name}</Link>
+                            <NavLink
+                              to={item.path}
+                              className={({ isActive, isPending }) =>
+                                isPending
+                                  ? "pending"
+                                  : isActive
+                                  ? "bg-clip-text text-transparent bg-gradient-to-r from-[#903AFF] to-[#FF26B9] text-[16px]"
+                                  : "text-white text-[16px]"
+                              }
+                            >
+                              {item.name}
+                            </NavLink>
                           </li>
                         );
                       })}

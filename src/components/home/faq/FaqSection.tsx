@@ -12,7 +12,10 @@ import Reveal from "../../utilis/Reveal";
 
 const FaqSection = () => {
   return (
-    <div className="border-b-[1px] border-white/[0.12] md:pt-[100px] pt-[60px] relative">
+    <div
+      className="border-b-[1px] border-white/[0.12] md:pt-[100px] pt-[60px] relative"
+      id="faq"
+    >
       <div className="absolute inset-0 overflow-hidden hidden md:block">
         <div className="md:max-w-[1037px] md:h-[948px] w-full absolute right-[-400px] top-[-400px]">
           <PurpleLens />

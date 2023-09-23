@@ -59,7 +59,7 @@ const DesktopRegister = () => {
   };
   return (
     <>
-      <Nav transparent={true} />
+      <Nav />
       <div className="min-h-screen pt-[145px] bg-secondary flex justify-center items-center relative font-monteserat ">
         <div className="absolute inset-0 overflow-hidden">
           <div className="max-w-[1037px] h-[950px] w-full absolute bottom-[80px] left-[-250px]">
